@@ -14,6 +14,15 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {DataTablesModule} from "angular-datatables";
 import {NgSelectModule} from "@ng-select/ng-select";
+import { AddBookComponent } from './componets/Book/add-book/add-book.component';
+import { UpdateBookComponent } from './components/Book/update-book/update-book.component';
+import { DeleteBookComponent } from './components/Book/delete-book/delete-book.component';
+import { ListofBooksComponent } from './components/Book/listof-books/listof-books.component';
+import { UpdateBookshopComponent } from './components/Bookshop/update-bookshop/update-bookshop.component';
+import { DeleteBookshopComponent } from './components/Bookshop/delete-bookshop/delete-bookshop.component';
+import { ListofBookshopComponent } from './components/Bookshop/listof-bookshop/listof-bookshop.component';
+import { AddBookshopComponent } from './components/Bookshop/add-bookshop/add-bookshop.component';
+import { AddmultiplebookBooksshopComponent } from './components/Bookshop/addmultiplebook-booksshop/addmultiplebook-booksshop.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +32,16 @@ import {NgSelectModule} from "@ng-select/ng-select";
     AuthorListComponent,
     AddAuthorComponent,
     AuthorDetailsComponent,
-    AuthorUpdateComponent
+    AuthorUpdateComponent,
+    AddBookComponent,
+    UpdateBookComponent,
+    DeleteBookComponent,
+    ListofBooksComponent,
+    UpdateBookshopComponent,
+    DeleteBookshopComponent,
+    ListofBookshopComponent,
+    AddBookshopComponent,
+    AddmultiplebookBooksshopComponent
   ],
   imports: [
     BrowserModule,

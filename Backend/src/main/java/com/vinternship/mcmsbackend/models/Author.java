@@ -19,7 +19,7 @@ public class Author {
     @CreatedDate
     private Date registration;
 
-    // public Author() {}
+     public Author() {}
 
     public Author(String id, String name, int age, String phone, String email, List<String> genre, Date registration) {
         this.id = id;
