@@ -19,21 +19,40 @@ public class BookController {
     @Autowired
     BookRepository BookRepository;
 
+//    @GetMapping("/books")
+//    public ResponseEntity<List<Book>> getAllBook(@RequestParam(required = false) String name) {
+//        try {
+//            List<Book> books = new ArrayList<Book>();
+//
+//            if (name == null) {
+//                BookRepository.findAll().forEach(books::add);
+//            }
+//
+//
+//            if (books.isEmpty()) {
+//                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//            }
+//
+//            return new ResponseEntity<>(books, HttpStatus.OK);
+//        } catch (Exception e) {
+//            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+//        }
+//    }
+
     @GetMapping("/books")
-    public ResponseEntity<List<Book>> getAllBook(@RequestParam(required = false) String name) {
+    public ResponseEntity<List<Book>> getAllBooks() {
         try {
-            List<Book> books = new ArrayList<Book>();
 
-            if (name == null) {
-                BookRepository.findAll().forEach(books::add);
-            }
-
+            List<Book> books = new ArrayList<>();
+            BookRepository.findAll().forEach(books::add);
 
             if (books.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
 
             return new ResponseEntity<>(books, HttpStatus.OK);
+
+
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -109,16 +128,16 @@ public class BookController {
         }
     }
 
-//    @GetMapping("/books/title/{title}")
-//    public ResponseEntity<List<Book>> findByTitle(@PathVariable("title") String title) {
-//        try {
-//            List<Book> b2 = BookRepository.findBookByTitle(title);
-//            if (b2.isEmpty()) {
-//                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//            }
-//            return new ResponseEntity<>(b2, HttpStatus.OK);
-//        } catch (Exception e) {
-//            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-//        }
+    @GetMapping("/books/title/{title}")
+    public ResponseEntity<List<Book>> findByTitle(@PathVariable("title") String title) {
+        try {
+            List<Book> b2 = BookRepository.findBookByTitle(title);
+            if (b2.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+            return new ResponseEntity<>(b2, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
-//}
+}

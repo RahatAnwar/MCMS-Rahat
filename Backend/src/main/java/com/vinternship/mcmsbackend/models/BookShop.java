@@ -78,7 +78,7 @@ public class BookShop {
         this.contract_no = contract_no;
     }
 
-    public Date getDate() {
+   public Date getDate() {
         return date;
     }
 }

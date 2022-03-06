@@ -9,12 +9,13 @@ public class Book {
     private  String id;
     private String title;
     private double price;
-    private Year year_of_publishing;
-    private Author author;
-    private String genre;
+//    private Year year_of_publishing;
+    private String year_of_publishing;
+    private Author[] author;
+    private Genre[] genre;
     private String publisher;
 
-    public Book(String id, String title, double price, Year year_of_publishing,Author author,  String genre, String publisher) {
+    public Book(String id, String title, double price, String year_of_publishing,Author[] author,  Genre[] genre, String publisher) {
         this.id = id;
         this.title = title;
         this.price = price;
@@ -49,27 +50,27 @@ public class Book {
         this.price = price;
     }
 
-    public Year getYear_of_publishing() {
+    public String getYear_of_publishing() {
         return year_of_publishing;
     }
 
-    public void setYear_of_publishing(Year year_of_publishing) {
+    public void setYear_of_publishing(String year_of_publishing) {
         this.year_of_publishing = year_of_publishing;
     }
 
-    public Author getAuthor() {
+    public Author[] getAuthor() {
         return author;
     }
 
-    public void setAuthor(Author author) {
+    public void setAuthor(Author[] author) {
         this.author = author;
     }
 
-    public String getGenre() {
+    public Genre[] getGenre() {
         return genre;
     }
 
-    public void setGenre(String genre) {
+    public void setGenre(Genre[] genre) {
         this.genre = genre;
     }
 

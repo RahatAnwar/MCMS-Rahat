@@ -1,12 +1,13 @@
 import {Author} from "./author";
+import {Genre} from "./genre";
 export class Book {
   id?: any;
   title?: string;
-  price?: any;
+  price?: number;
   author?: Author[];
-  genre?: string;
+  genre?: Genre[];
   publisher?: string;
-  year_of_publishing?: number;
-  date?: Date;
+  year_of_publishing?: string;
+  // date?: Date;
 
 }

@@ -1,16 +1,19 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthorServicesService} from "../../services/author-services.service";
 import {Author} from "../../models/author";
-import * as $ from 'jquery';
-// import 'datatables.net';
-// import 'datatables.net-dt';
+//import * as $ from 'jquery';
+
+
+//import 'datatables.net';
+//import 'datatables.net-dt';
 
 @Component({
   selector: 'app-author-list',
   templateUrl: './author-list.component.html',
   styleUrls: ['./author-list.component.css']
+
 })
-export class AuthorListComponent implements OnInit {
+export class AuthorListComponent  implements OnInit {
 
   authors?: Author[];
   currentAuthor: Author = {};
@@ -18,6 +21,8 @@ export class AuthorListComponent implements OnInit {
   name = '';
 
   dtOptions: DataTables.Settings = {};
+
+
 
 
   constructor(private authorService: AuthorServicesService) {

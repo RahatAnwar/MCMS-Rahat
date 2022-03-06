@@ -1,6 +1,4 @@
 package com.vinternship.mcmsbackend.controllers;
-
-
 import com.vinternship.mcmsbackend.repositories.BookShopRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,6 +25,7 @@ public class BookShopController {
                     bookshop.getContract_no(),
                     bookshop.getEmail(),
                     bookshop.getDate()
+
             ));
 
             return new ResponseEntity<>(_b, HttpStatus.CREATED);

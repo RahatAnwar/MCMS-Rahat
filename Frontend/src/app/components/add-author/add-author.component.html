@@ -26,9 +26,12 @@
 
             <div class="form-group mt-2">
               <label for="genre">Author's book genres</label>
-              <ng-select (change)="print()" [items]="genres" bindLabel="genre" id="genre" name="genre"
+              <ng-select bindLabel="genre" id="genre" name="genre"
                          placeholder="Select genres"
                          appendTo="body" [multiple]="true" [(ngModel)]="selected_genres">
+                <ng-option [value]="item" *ngFor="let item of db_genres">
+                  {{item.name}}
+                </ng-option>
               </ng-select>
             </div>
 
@@ -40,7 +43,7 @@
 
           <div *ngIf="submitted">
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-              <strong>Tutorial was submitted successfully!</strong>
+              <strong> Author Information  was submitted successfully!</strong>
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             <button class="btn btn-sm float-end btn-primary" (click)="newAuthor()"><i
